@@ -1,5 +1,5 @@
 'use strict';
 
-myApp.controller('Demo', function($scope) {
+angular.module('myApp').controller('Demo', function($scope) {
   $scope.name = 'world';
 });
