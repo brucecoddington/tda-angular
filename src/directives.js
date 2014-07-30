@@ -1,6 +1,8 @@
 'use strict';
 
-myApp.directive('zippy', function(){
+angular.module('myApp')
+
+.directive('zippy', function(){
   return {
     restrict: 'E',
     transclude: true,
