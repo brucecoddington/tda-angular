@@ -5,7 +5,7 @@ myApp.directive('zippy', function(){
     restrict: 'E',
     transclude: true,
     scope: { 
-      title:'@title' 
+      title:'@' 
     },
     template:
       '<div class="zippy {{state}}">' +
@@ -14,8 +14,10 @@ myApp.directive('zippy', function(){
       '</div>',
 
     link: function(scope, element, attrs) {
-      scope.leak = "LEAKING";
       scope.state = "opened";
+
+      scope.name = "Attempting to Overwrite";
+
       scope.toggle = function() {
         scope.state = scope.state == 'opened' ? 'closed' : 'opened';
       }
