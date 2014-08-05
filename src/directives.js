@@ -6,22 +6,22 @@ angular.module('myApp')
   return {
     restrict: 'E',
     transclude: true,
-    scope: { 
-      title:'@' 
+    scope: {
+      title:'@'
     },
     template:
-      '<div class="zippy {{state}}">' +
+      '<div class="zippy" ng-class="state ? \'opened\' : \'closed\'">' +
         '<div class="title" ng-click="toggle()">{{title}}</div>' +
         '<div class="body" ng-transclude></div>' +
       '</div>',
 
     link: function(scope, element, attrs) {
-      scope.state = "opened";
+      scope.state = true;
 
       scope.name = "Attempting to Overwrite";
 
       scope.toggle = function() {
-        scope.state = scope.state == 'opened' ? 'closed' : 'opened';
+        scope.state = !scope.state;
       }
     }
   }
